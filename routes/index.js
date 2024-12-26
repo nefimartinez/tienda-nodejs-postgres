@@ -2,12 +2,14 @@
 
 const express = require('express');
 
+const loginUsuarioRouter = require('../src/components/loginUsuario/loginUsuarioController');
+
 function routerApi(app) {
 	const router = express.Router();
 
-	// Rutas de la API
-
-	//router.use('/v1/comunas/listado', listadoComunasRouter);
+	
+	// Login usuario
+	router.use('/v1/loginUsuario', loginUsuarioRouter);
 
 	// la ruta base de la api
 	app.use('/apiTienda', router);
