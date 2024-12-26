@@ -18,7 +18,7 @@ async function serverStart() {
 
 		// cors config
 		const corsConfig = {
-			origin: ['https://*'],
+			origin: ['https://*']
 		};
 		app.use(cors(corsConfig));
 
