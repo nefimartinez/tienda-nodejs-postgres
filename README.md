@@ -1,10 +1,10 @@
 # README
 
-Proyecto XXXXX
+Proyecto Tienda online ( backend de una tienda online) 
 
 ### ¿Qué es este repositorio?
 
-- Repositorio para el proyecto XXXXX
+- Repositorio para el proyecto Tienda
 
 ### ¿Cómo lo configuro para levantarlo en Local?
 

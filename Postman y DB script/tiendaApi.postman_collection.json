@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "9cfb96ed-a9ed-44a8-8071-aa3ef9fed938",
+		"name": "tiendaApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10350678"
+	},
+	"item": [
+		{
+			"name": "loginUsuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"nefi\",\r\n    \"contraseña\": \"nefi\",\r\n    \"correo\": \"nefi.martinez.torres@gmail.com\",\r\n    \"rol\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/apiTienda/v1/loginUsuario",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"apiTienda",
+						"v1",
+						"loginUsuario"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

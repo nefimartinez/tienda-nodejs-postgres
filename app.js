@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const config = require('./config/config');
 const cors = require('cors');
 const loggerCNS = require('./src/utils/LoggerCNS').loggerCNS;
+const { pool } = require('./src/utils/handlePostgresDB');
 
 const app = express();
 
@@ -27,6 +28,7 @@ async function serverStart() {
 
 		//conecta a DB
 		await connectDB();
+		loggerCNS.info('Conectado a la DB');
 	} catch (error) {
 		loggerCNS.error(error);
 		await cleanup();
@@ -34,11 +36,28 @@ async function serverStart() {
 }
 
 async function connectDB() {
-	// Create coneccion a db
+	try {
+		// Create coneccion a db
+		//consulta de prueba para verificar la coneccion
+		await pool.query('SELECT NOW()');
+		loggerCNS.info('Coneccion a la DB establecida');
+	} catch (error) {
+		loggerCNS.error('Error al conectar a la DB');
+		loggerCNS.error('Error : ', error);
+		throw error;
+	}
 }
 
 async function disconnectDB() {
-	// cierre de la coneccion a DB
+	try {
+		// Cerrar coneccion a db
+		await pool.end(); // cierra todas las conexiones
+		loggerCNS.info('Coneccion a la DB cerrada');
+	} catch (error) {
+		loggerCNS.error('Error al cerrar la DB');
+		loggerCNS.error('Error : ', error);
+		throw error;
+	}
 }
 
 async function cleanup() {
