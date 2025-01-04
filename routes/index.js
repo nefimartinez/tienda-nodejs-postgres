@@ -2,13 +2,13 @@
 
 const express = require('express');
 
-const loginUsuarioRouter = require('../src/components/loginUsuario/loginUsuarioController');
+// Importar los routers de cada componente
+const loginUsuarioRouter = require('../src/components/usuarios/loginUsuario/loginUsuarioRouter');
 
 function routerApi(app) {
 	const router = express.Router();
 
-	
-	// Login usuario
+	//rutas de los componentes
 	router.use('/v1/loginUsuario', loginUsuarioRouter);
 
 	// la ruta base de la api
