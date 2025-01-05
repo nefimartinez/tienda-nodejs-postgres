@@ -45,7 +45,7 @@ drop table if exists "TiendaDB"."usuarios" cascade;
 create table "TiendaDB"."usuarios" (
    "id" serial not null,
    "nombre" varchar(50) not null,
-   "contraseña" varchar(50) not null,
+   "contraseña" varchar(100) not null,
    "correo" varchar(50) not null,
    "rol" smallint not null
 ); 
@@ -164,5 +164,5 @@ create table "TiendaDB"."usuarios" (
    "rol" smallint not null
 ); */
 
-insert into "TiendaDB"."usuarios" values (default, 'nefi', 'nefi', 'nefi.martinez.torres@gmail.com', 1 );
-insert into "TiendaDB"."usuarios" values (default, 'carlos', 'carlos', 'carlitos@gmail.com', 2 );
+insert into "TiendaDB"."usuarios" values (default, 'nefi', '$2a$10$dcUoB1fiiHhjFB6/aa6Ky.kGtopqbHNkyFdMWvqxBJ48lx.LgSxB.', 'nefi.martinez.torres@gmail.com', 1 ); -- pasword es : nefi
+insert into "TiendaDB"."usuarios" values (default, 'carlos', '$2a$10$2P4dEvYhmcV32KdqS5xY7OW9T95BWa33.Z6biBu1vhB8yyi/bZjp.', 'carlos@gmail.com', 2 ); --password es : carlos

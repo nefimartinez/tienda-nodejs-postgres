@@ -8,7 +8,8 @@ const {
 	INTERNAL_ERROR,
 	NOT_FOUND,
 	BAD_REQUEST,
-	SUCCESS
+	SUCCESS,
+	UNAUTHORIZED
 } = require('../../../utils/constantes');
 
 module.exports.loginUsuarioModule = async (body) => {
@@ -47,7 +48,7 @@ module.exports.loginUsuarioModule = async (body) => {
 			logger.error('Contraseña incorrecta');
 			return {
 				err_code: -1,
-				statuscode: BAD_REQUEST,
+				statuscode: UNAUTHORIZED,
 				err_msg: 'Contraseña incorrecta'
 			};
 		}
